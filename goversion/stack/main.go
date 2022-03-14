@@ -16,4 +16,6 @@ func main() {
 	top = stack.Push(top, "test")
 	fmt.Printf("%p\n", top)
 	stack.PrintStack(top)
+	stack.SetTop(top, "newtop")
+	stack.PrintStack(top)
 }

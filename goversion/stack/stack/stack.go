@@ -32,6 +32,10 @@ func NewStack(info Any) *Node {
 	return top
 }
 
+func SetTop(top *Node, any Any) {
+	top.Info = any
+}
+
 func PrintStack(top *Node) {
 	for {
 		if top != nil {
