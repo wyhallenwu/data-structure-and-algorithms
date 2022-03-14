@@ -1,12 +1,20 @@
 package stack
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 type Any interface{}
 
 type Node struct {
 	Info Any
 	Next *Node
+}
+
+type Stack struct {
+	top    *Node
+	length int
 }
 
 func NewNode(info Any) *Node {
@@ -20,30 +28,41 @@ func (n *Node) PrintNode() {
 	fmt.Print(n.Info)
 }
 
-func Push(top *Node, info Any) *Node {
+// NewStack creates a new top node for a stack
+func NewStack() *Stack {
+	stack := &Stack{NewNode("top"), 0}
+	return stack
+
+}
+
+func (s *Stack) Push(info Any) {
 	n := NewNode(info)
 	// pointer copy is just copy the info contained
-	n.Next, top = top, n
-	return top
+	s.top.Next, n.Next = n, s.top.Next
+	s.length += 1
 }
 
-func NewStack(info Any) *Node {
-	top := NewNode(info)
-	return top
+func (s *Stack) Pop() {
+	if s.top.Next != nil {
+		s.top.Next = s.top.Next.Next
+	} else {
+		log.Println("Empty. can't pop")
+	}
 }
 
-func SetTop(top *Node, any Any) {
-	top.Info = any
+func (s *Stack) SetTop(any Any) {
+	s.top.Next.Info = any
 }
 
-func PrintStack(top *Node) {
+func (s *Stack) PrintStack() {
+	n := s.top.Next
 	for {
-		if top != nil {
-			top.PrintNode()
+		if n != nil {
+			n.PrintNode()
 			fmt.Printf("->")
-			top = top.Next
+			n = n.Next
 		} else {
-			fmt.Printf("->||END\n")
+			fmt.Printf("END\n")
 			break
 		}
 	}

@@ -1,21 +1,14 @@
 package main
 
-import (
-	"fmt"
-	"stack/stack"
-)
+import "stack/stack"
 
 func main() {
-	top := stack.NewStack("top")
-	top = stack.Push(top, "wuyuheng")
-	stack.PrintStack(top)
-	fmt.Printf("%p\n", top)
-	top = stack.Push(top, "yuhengwu")
-	fmt.Printf("%p\n", top)
-	stack.PrintStack(top)
-	top = stack.Push(top, "test")
-	fmt.Printf("%p\n", top)
-	stack.PrintStack(top)
-	stack.SetTop(top, "newtop")
-	stack.PrintStack(top)
+	s := stack.NewStack()
+	s.Push("1")
+	s.Push("2")
+	s.Push("3")
+	s.Push("4")
+	s.PrintStack()
+	s.Pop()
+	s.PrintStack()
 }

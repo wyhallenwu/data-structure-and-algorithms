@@ -14,3 +14,9 @@
 - [ ] Reverse
 
 ***
+### Stack
+**Basic**
+- [x] Push
+- [x] Pop
+- [x] PrintStack
+- [x] SetTop
