@@ -25,7 +25,7 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 8,
+				"line" : 9,
 				"parent" : 0
 			},
 			{
@@ -53,6 +53,10 @@
 				{
 					"backtrace" : 2,
 					"path" : "/home/wuyuheng/Desktop/data-structure-and-algorithms/cppversion/stack"
+				},
+				{
+					"backtrace" : 2,
+					"path" : "/home/wuyuheng/Desktop/data-structure-and-algorithms/cppversion/queue"
 				}
 			],
 			"language" : "CXX",
@@ -66,7 +70,7 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				1
 			]
 		}
 	],
@@ -96,14 +100,14 @@
 	"sourceGroups" : 
 	[
 		{
-			"name" : "Source Files",
+			"name" : "Header Files",
 			"sourceIndexes" : 
 			[
 				0
 			]
 		},
 		{
-			"name" : "Header Files",
+			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
 				1
@@ -114,13 +118,13 @@
 	[
 		{
 			"backtrace" : 1,
-			"compileGroupIndex" : 0,
-			"path" : "stack/main.cpp",
+			"path" : "queue/queue.h",
 			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,
-			"path" : "stack/stack.h",
+			"compileGroupIndex" : 0,
+			"path" : "queue/main.cpp",
 			"sourceGroupIndex" : 1
 		}
 	],
