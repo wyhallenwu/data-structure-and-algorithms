@@ -32,6 +32,7 @@ func NewList() *Linklist {
 // Insert inserts a new node at the index of ix
 func (l *Linklist) Insert(ix int, info Any) {
 	in := NewNode(info)
+	// if ix is out of length or length is 0 then insert to 1st position
 	if ix > l.length || l.length == 0 {
 		ix = 0
 	}
@@ -42,6 +43,7 @@ func (l *Linklist) Insert(ix int, info Any) {
 			flag = flag.Next
 			count += 1
 		} else {
+			// insert position is not tail
 			if flag.Next != nil {
 				flag.Next.Pre = in
 			}
