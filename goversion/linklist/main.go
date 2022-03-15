@@ -1,22 +1,13 @@
 package main
 
-import (
-	"fmt"
-	"linklist/linklistpkg"
-)
+import "linklist/linklistpkg"
 
 func main() {
-	head := linklistpkg.NewNode("head")
-	err := linklistpkg.Insert(head, 1, "test1")
-	if err != nil {
-		fmt.Println(err)
-	}
-	linklistpkg.Insert(head, 2, "test2")
-	err = linklistpkg.Insert(head, 0, "test3")
-	fmt.Println(err)
-	linklistpkg.PrintList(head)
-	linklistpkg.Delete(head, 0)
-	linklistpkg.PrintList(head)
-	linklistpkg.SetInfo(head, 1, "test4")
-	linklistpkg.PrintList(head)
+	l := linklistpkg.NewList()
+	l.Insert(0, 10)
+	l.Insert(0, 20)
+	l.Insert(1, 30)
+	l.Insert(1, "wuyuheng")
+	l.PrintList()
+
 }
