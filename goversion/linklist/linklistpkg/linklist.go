@@ -1,6 +1,9 @@
 package linklistpkg
 
-import "fmt"
+import (
+	"fmt"
+	"log"
+)
 
 type Any interface{}
 
@@ -68,4 +71,35 @@ func (l *Linklist) PrintList() {
 			break
 		}
 	}
+}
+
+func (l *Linklist) Delete(ix int) {
+	if l.length == 0 {
+		log.Fatal("empty can't delete")
+	} else if ix >= l.length {
+		ix = 0
+		log.Println("out of length. Delete 1st position")
+	}
+	count := 0
+	flag := l.head.Next
+	for {
+		if count < ix {
+			flag = flag.Next
+			count += 1
+		} else {
+			//if delete head
+			if count == 0 {
+				flag.Pre.Next = flag.Next
+				flag = nil
+			} else if flag.Next == nil { //if delete tail
+				flag.Pre.Next = nil
+				flag = nil
+			} else {
+				flag.Pre.Next, flag.Next.Pre = flag.Next, flag.Pre
+				flag = nil
+			}
+			break
+		}
+	}
+	l.length -= 1
 }

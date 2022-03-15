@@ -9,5 +9,7 @@ func main() {
 	l.Insert(1, 30)
 	l.Insert(3, "wuyuheng")
 	l.PrintList()
+	l.Delete(4)
+	l.PrintList()
 
 }
