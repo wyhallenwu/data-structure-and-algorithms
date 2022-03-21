@@ -45,7 +45,7 @@ func (q *queue) Rear() Any {
 	return q.rear.info
 }
 
-func (q *queue) Insert(n *node) {
+func (q *queue) Push(n *node) {
 	if q.IsEmpty() {
 		q.front, q.rear = n, n
 		q.front.next = q.rear

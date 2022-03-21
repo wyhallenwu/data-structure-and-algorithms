@@ -20,3 +20,9 @@
 - [x] Pop
 - [x] PrintStack
 - [x] SetTop
+
+### Queue
+**Basic**
+- [x] Push
+- [x] Pop
+- [x] PrintQueue
